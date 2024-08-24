@@ -22,6 +22,7 @@ const BudgetSetup = () => {
   const [allExpnseInputHasValue, setAllExpnseInputHasValue] = useState(false);
   const [remainingBalance, setRemainingBalance] = useState(0)
 
+
   const handleChange = (e) => {
     setFinancialInfo({ ...financialInfo, [e.target.name]: e.target.value });
   };
