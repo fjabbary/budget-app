@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@font-face {
+  font-family: "Aileron";
+  src: url("./assets/aileron.regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  font-family: "Aileron", sans-serif;
+  background: #0b0317 !important;
+  color: #f6f5f7 !important;
+}
+
+/* Landing */
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* LoginSignup */
+#login-signup {
+  text-align: center;
+  padding: 0 16px;
+}
+
+#login-signup .logo {
+  margin-top: 54px;
+}
+
+#login-signup .title{
+  margin-top: 133px;
+  margin-bottom: 67px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.24px;
+}
+
+#login-signup button {
+  display: block;
+  width: 100%;
+}
+
+.btn-login {
+  background-color: #fff !important;
+  margin-bottom: 16px;
+}
+
+.btn-green {
+  background-color: #56f0b8 !important;
+}
+
+/* login */
+
+#login, #signup{
+  padding: 140px 15px 0 15px;
+}
+
+#budget-setup {
+  padding: 112px 15px 0 15px;
+}
+
+#login h2,
+#signup h2,
+#budget-setup h2 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  margin-bottom: 24px;
+}
+
+#login-signup .btn,
+#login .btn
+{
+  height: 50px !important;
+  color: #0C0B0C;
+}
+
+#login-signup input,
+#login input,
+#signup input{
+  height: 44px !important;
+}
+
+#login .password {
+  margin-bottom: 24px;
+}
+
+a.signup-link {
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+  color:#f6f5f7;
+  font-size: 16px;
+}
+
+#signup button 
+{
+  margin-top: 24px;
+  height: 51px;
+}
+
+#budget-setup button {
+  height: 51px;
+}
+
+#signup button:disabled, 
+#budget-setup button:disabled {
+  background-color: #0C0B0C !important;
+}
+
+.back {
+   position: absolute;
+   left: 30px;
+   top : 60px;
+}
+
+#signup ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#signup ul li {
+  width: 50%;
+}
+
+/* Goals */
+.goals {
+  padding: 0 37.5px;
+  margin: 24px 0;
+}
+
+.goals .goal {
+  width: 84px;
+  height: 84px;
+  border-radius: 100%;
+  background-color: rgba(86,92,240, 0.5);
+  padding: 16px;
+  margin-bottom: 28px;
+}
+
+.goals .goal .text {
+  font-size: 12px;
+}
+
+img[alt="Utilities"] {
+  width: 49px;
+  height: 48px;
+}
+
+.goals button {
+  height: 51px;
+}
+
+.expense-item {
+  background-image: linear-gradient(to right, #9055F0 , #565CF0);
+  border-radius: 8px ;
+  height: 93px;
+}
+
+.expense-item .expense-icon {
+  width: 60%;
+}
+
+.expense-item .expense-input {
+  width: 147px;
+  height: 100%;
+}
+
+.expense-item .expense-input input {
+  height: 100%;
+  border-radius: 8px;
+  border: 0;
+  font-weight: bold;
+}
+
+.expense-item .expense-input input:focus {
+  outline: none;
+}
+
+#budget-setup button {
+  margin-top: 24px;
+}
+
+#spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transform: translateY(-130px);
+}
+
+#remaining-balance {
+  color: #56F0B8;
+  font-family: Aileron;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: center;
+  margin: 120px 0;
+}
