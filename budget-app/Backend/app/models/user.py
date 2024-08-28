@@ -6,8 +6,19 @@ class User (db.Model):
     first_name: Mapped[str] = mapped_column(db.String(255), nullable=False)
     last_name: Mapped[str] = mapped_column(db.String(255), nullable=False)
     username: Mapped[str] = mapped_column(db.String(255), nullable=False, unique=True)
-    email: Mapped[str] = mapped_column(db.String(255), nullable=False, unique=True)
+    #email: Mapped[str] = mapped_column(db.String(255), nullable=False, unique=True)
     password: Mapped[str] = mapped_column(db.String(255), nullable=False)
+
+    # checking:
+    # savings:
+    # budget:
+    # goals:
+
+
+
+
+
+
 
 def __str__(self):
     return f"{self.first_name}{self.last_name}"

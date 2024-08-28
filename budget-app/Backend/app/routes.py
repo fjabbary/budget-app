@@ -1,11 +1,10 @@
 from app import app # from the app folder, import the app variable (Flask instance)
 from flask import request, Flask, render_template, request, jsonify, redirect, url_for
 from app.schemas.userSchema import user_input_schema, user_output_schema, users_schema
-from app.schemas.budgetSchema import 
 # from app.schemas.productSchema import product_schema, products_schema
 from marshmallow import ValidationError
 from app.database import db
-from app.models import User, Budget
+from app.models import User
 from werkzeug.security import generate_password_hash
 
 @app.route('/')
@@ -50,7 +49,7 @@ def create_user():
              first_name=user_data['first_name'],
              last_name=user_data['last_name'],
              username=user_data['username'],
-             email=user_data['email'],
+            #  email=user_data['email'],
              password=generate_password_hash(user_data['password'])
         )
         #and add to the database
