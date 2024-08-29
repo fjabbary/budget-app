@@ -7,10 +7,14 @@ class UserSchema(ma.Schema):
     first_name = fields.String(required=True)
     last_name = fields.String(required=True)
     username = fields.String(required=True)
-    email  = fields.String(required=True)
+    # email  = fields.String(required=True)
     password = fields.String(required=True)
+    checkings = fields.String(required=True)
+    savings = fields.String(required =True)
+    budget = fields.String(required=True)
+    goals = fields.String(required=True)
 
-#Customer instances of the schema
+#user instances of the schema
 user_input_schema = UserSchema()
 user_output_schema = UserSchema(exclude=["password"])
 users_schema = UserSchema(many=True, exclude=["password"])

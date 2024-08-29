@@ -11,7 +11,7 @@ from werkzeug.security import generate_password_hash
 def index():
     return 'filler statement'
 
-# Get all customers
+# Get all users
 @app.route('/users', methods=['GET'])
 def get_all_users():
     query = db.select(User)
@@ -28,7 +28,7 @@ def get_single_user(user_id):
             return user_output_schema.jsonify(user)
     return{"error": f"User with ID {user_id} does not exist"}, 404 #not found
 
-
+#create a new user
 @app.route('/users', methods=["POST"])
 def create_user():
     #Check if the request has a JSON body
@@ -39,24 +39,30 @@ def create_user():
         data = request.json
         # check if the body has all the required fields
         user_data = user_input_schema.load(data)
-        #Query the customer table to see if any customers have that username or email
-        query = db.select(User).where( (User.username == user_data['username']) | (User.email == user_data['email']) )
+        #Query the user table to see if any customers have that username or last_name
+        query = db.select(User).where( (User.username == user_data['username']) | (User.last_name == user_data['last_name']) )
         check_users = db.session.scalars(query).all()
         if check_users: # if there are customers in the check_customers list (empty list evaluatea to false)
-             return {"error": "User with that username and/or email already exists"}, 400 #Bad request by Client
+             return {"error": "User with that username already exists"}, 400 #Bad request by Client
         #Create a new instance of Customer and add to the database
         new_user = User(
              first_name=user_data['first_name'],
              last_name=user_data['last_name'],
              username=user_data['username'],
             #  email=user_data['email'],
-             password=generate_password_hash(user_data['password'])
+             password=generate_password_hash(user_data['password']),
+             goals=user_data['goals'],
+             budget=user_data['budget'], 
+             checkings=user_data['checkings'],
+             savings=user_data['savings']
+
+
         )
         #and add to the database
         db.session.add(new_user)
         db.session.commit()
        
-        user_data["id"] = len(users) + 1
+        user_data["id"] = len(User) + 1
         users.append(user_data)
         return user_output_schema.jsonify(new_user), 201 #created - Success
     except ValidationError as err:
