@@ -9,9 +9,9 @@ class UserSchema(ma.Schema):
     username = fields.String(required=True)
     # email  = fields.String(required=True)
     password = fields.String(required=True)
-    checkings = fields.String(required=True)
-    savings = fields.String(required =True)
-    budget = fields.String(required=True)
+    checkings = fields.Float(required=True)
+    savings = fields.Float(required =True)
+    budget = fields.Float(required=True)
     goals = fields.String(required=True)
 
 #user instances of the schema

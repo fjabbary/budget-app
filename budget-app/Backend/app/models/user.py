@@ -8,10 +8,10 @@ class User (db.Model):
     username: Mapped[str] = mapped_column(db.String(255), nullable=False, unique=True)
     #email: Mapped[str] = mapped_column(db.String(255), nullable=False, unique=True)
     password: Mapped[str] = mapped_column(db.String(255), nullable=False)
-    checkings: Mapped[str] = mapped_column(db.String(255), nullable=False)
-    savings: Mapped[str] = mapped_column(db. String(255), nullable= False)
-    budget: Mapped[str] = mapped_column(db. String(255), nullable= False)
-    goals: Mapped[str] = mapped_column(db. String(255), nullable= False)
+    checkings: Mapped[str] = mapped_column(db.Float(255), nullable=False)
+    savings: Mapped[str] = mapped_column(db.Float(255), nullable= False)
+    budget: Mapped[str] = mapped_column(db.Float(255), nullable= False)
+    goals: Mapped[str] = mapped_column(db.String(255), nullable= False)
 
 
 
